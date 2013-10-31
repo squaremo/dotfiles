@@ -1,0 +1,69 @@
+# Largely from http://thume.ca/howto/2012/11/19/using-slate/
+
+config defaultToCurrentScreen true
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+bind x:cmd;alt hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+
+bind g:cmd;alt grid padding:5 0:6,2 1:8,3
+
+# Abstract positions
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+alias leftthreequarter move screenOriginX;screenOriginY 3*screenSizeX/4;screenSizeY
+alias leftinneronequarter move screenOriginX+screenSizeX/4;screenOriginY screenSizeX/4;screenSizeY
+alias leftonequarter move screenOriginX;screenOriginY screenSizeX/4;screenSizeY
+alias rightthreequarter move screenOriginX+screenSizeX/4;screenOriginY 3*screenSizeX/4;screenSizeY
+alias rightinneronequarter move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/4;screenSizeY
+alias rightonequarter move screenOriginX+3*screenSizeX/4;screenOriginY screenSizeX/4;screenSizeY
+
+# NB reassign these
+# Numpad location Bindings
+bind pad1 ${bottomleft}
+bind pad2 push bottom bar-resize:screenSizeY/2
+bind pad3 ${bottomright}
+bind pad4 ${lefthalf}
+bind pad5 ${full}
+bind pad6 ${righthalf}
+bind pad7 ${topleft}
+bind pad8 push top bar-resize:screenSizeY/2
+bind pad9 ${topright}
+
+bind 1:cmd;alt ${leftonequarter}
+bind 2:cmd;alt ${leftinneronequarter}
+bind 3:cmd;alt ${lefthalf}
+bind 4:cmd;alt ${leftthreequarter}
+bind 5:cmd;alt ${full}
+bind 6:cmd;alt ${rightthreequarter}
+bind 7:cmd;alt ${righthalf}
+bind 8:cmd;alt ${rightinneronequarter}
+bind 9:cmd;alt ${rightonequarter}
+
+bind up:cmd;alt    throw 0
+bind down:cmd;alt  throw 1
+
+# Erm.
+#layout 1monitor 'iTerm':REPEAT ${bottomright}
+#layout 1monitor 'Sublime Text 2':REPEAT ${lefthalf}
+#layout 1monitor 'MacVim':REPEAT ${lefthalf}
+#layout 1monitor 'Safari':REPEAT ${righthalf}
+#layout 1monitor 'Mail':REPEAT ${righthalf}
+#layout 1monitor 'Path Finder':REPEAT ${topright}
+#layout 1monitor 'Xcode':REPEAT ${full}
+#layout 1monitor 'Eclipse':REPEAT ${full}
+#layout 1monitor 'iTunes':REPEAT ${full}
+
+#bind l:cmd layout 1monitor
+
+# Speed dial
+bind b:cmd;alt focus 'Google Chrome'
+bind e:cmd;alt focus 'Emacs'
+bind t:cmd;alt focus 'Terminal'
