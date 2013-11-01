@@ -1,1 +1,3 @@
-[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
+if [ -f /etc/bash_completion ]; then
+   source /etc/bash_completion
+fi
