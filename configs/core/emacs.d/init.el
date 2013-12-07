@@ -1,3 +1,4 @@
+;; Get rid of that pointless toolbar
 (tool-bar-mode -1)
 
 ;; Standard PC keys
@@ -15,6 +16,7 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
+;; Themes: F1 for dark, F2 for light (better if in sunlight)
 (defun light-theme ()
   (interactive)
   (load-theme 'solarized-light))
@@ -52,6 +54,8 @@
 ;; Somehow Clojure mode automagically switches paredit on, and paredit
 ;; is evil. So switch it off again.
 (add-hook 'clojure-mode-hook 'turn-off-paredit)
+;; Mostly of use for the above languages
+(show-paren-mode)
 
 ;; Prettty! Well, allegedly.
 ;;(byte-compile-file "~/.xemacs/rainbow-delimiters.el")
