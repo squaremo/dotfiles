@@ -1,3 +1,5 @@
+(tool-bar-mode -1)
+
 ;; Standard PC keys
 (global-set-key [home] 'beginning-of-line)
 (global-set-key [end] 'end-of-line)
