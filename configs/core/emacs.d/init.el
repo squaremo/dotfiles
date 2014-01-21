@@ -63,6 +63,17 @@
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
 
+(require 'erlang)
+(setq auto-mode-alist (append auto-mode-alist
+                              '(("\\.rel$" . erlang-mode)
+                                ("\\.app$" . erlang-mode)
+                                ("\\.appSrc$" . erlang-mode)
+                                ("\\.app.src$" . erlang-mode)
+                                ("\\.hrl$" . erlang-mode)
+                                ("\\.erl$" . erlang-mode)
+                                ("\\.yrl$" . erlang-mode)
+                                ("rebar\\.config" . erlang-mode))))
+
 ;; Save sessions
 (desktop-save-mode 1)
 ;; alias emacs to emacs-client
