@@ -1,5 +1,3 @@
-;; Get rid of that pointless toolbar
-(tool-bar-mode -1)
 
 ;; Standard PC keys
 (global-set-key [home] 'beginning-of-line)
@@ -76,5 +74,5 @@
 
 ;; Save sessions
 (desktop-save-mode 1)
-;; alias emacs to emacs-client
+;; enable emacs-client; may be worth aliasing emacs to emacs-client
 (server-start)
