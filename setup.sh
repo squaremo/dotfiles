@@ -2,7 +2,8 @@
 cd $(dirname "$0")
 SETUPHOST="$(hostname -s)"
 SETUPDOMAIN="$(hostname -f | sed -e "s:$(hostname -s):any:")"
-echo "Setting up home directory from $(pwd) for host $SETUPHOST and domain $SETUPDOMAIN."
+SETUPOS="$(uname)"
+echo "Setting up home directory from $(pwd) for OS $SETUPOS, host $SETUPHOST and domain $SETUPDOMAIN."
 
 git submodule update --init
 
@@ -50,6 +51,7 @@ invoke_d () {
 for dotfiles_f in $(pwd)/configs/*/$2/*.sh ; do [ -f \$dotfiles_f ] && . \$dotfiles_f; done
 for dotfiles_f in $(pwd)/configs/*/domains/$SETUPDOMAIN/$2/*.sh ; do [ -f \$dotfiles_f ] && . \$dotfiles_f; done
 for dotfiles_f in $(pwd)/configs/*/hosts/$SETUPHOST/$2/*.sh ; do [ -f \$dotfiles_f ] && . \$dotfiles_f; done
+for dotfiles_f in $(pwd)/configs/*/os/$SETUPOS/$2/*.sh ; do [ -f \$dotfiles_f ] && . \$dotfiles_f; done
 unset dotfiles_f
 EOF
     else
@@ -143,6 +145,7 @@ if [ "$uninstall" = "no" ]; then
 	filesources="$filesources \"$(pwd)/$configroot/emacs.d\""
 	filesources="$filesources \"$(pwd)/$configroot/domains/$SETUPDOMAIN/emacs.d\""
 	filesources="$filesources \"$(pwd)/$configroot/hosts/$SETUPHOST/emacs.d\""
+	filesources="$filesources \"$(pwd)/$configroot/os/$SETUPOS/emacs.d\""
     done
     chopout ~/.emacs
     splicein ~/.emacs <<EOF
