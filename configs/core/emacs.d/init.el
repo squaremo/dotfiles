@@ -8,12 +8,6 @@
 (global-set-key [?\M-g] 'goto-line)
 (global-set-key [(control tab)] 'other-window)
 
-;; revert to v22 bindings in 23
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
-
 ;; Themes: F1 for dark, F2 for light (better if in sunlight)
 (defun light-theme ()
   (interactive)
@@ -38,12 +32,6 @@
 ;; Use directory-ish uniquifying
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
-
-;; Marmalade package repo
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
 
 ;; Clojure, Lisp, Scheme
 (defun turn-on-paredit () (paredit-mode +1))
@@ -71,6 +59,12 @@
                                 ("\\.erl$" . erlang-mode)
                                 ("\\.yrl$" . erlang-mode)
                                 ("rebar\\.config" . erlang-mode))))
+
+(add-hook 'haskell-mode-hook '(turn-on-haskell-indentation))
+
+;; Tuareg mode is broken unless you turn SMIE indentation off
+(require 'tuareg)
+(setq tuareg-use-smie nil)
 
 ;; Save sessions
 (desktop-save-mode 1)
