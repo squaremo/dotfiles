@@ -1,0 +1,5 @@
+[user]
+	email = mikeb@squaremobius.net
+	name = Michael Bridgen
+[core]
+	excludesfile = /home/mikeb/.gitignore
