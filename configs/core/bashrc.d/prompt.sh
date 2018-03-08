@@ -3,6 +3,7 @@ PINK=$'\e[35;40m'
 GREEN=$'\e[32;40m'
 ORANGE=$'\e[33;40m'
 
+# https://bitbucket.org/gward/vcprompt
 vc_ps1() {
     vcprompt -f "(%s:${PINK}%b${D}${GREEN}%i${D})" 2>/dev/null
 }

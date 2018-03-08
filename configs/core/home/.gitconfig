@@ -3,3 +3,13 @@
 	name = Michael Bridgen
 [core]
 	excludesfile = /home/mikeb/.gitignore
+[alias]
+	fpush = push
+        forcepush = push --force-with-lease
+        amend = commit --amend
+        pom = pull --ff-only origin master
+        cached = diff --cached
+[merge]
+        conflictstyle = diff3
+[pull]
+        ff = only
