@@ -40,14 +40,12 @@
 ;; Somehow Clojure mode automagically switches paredit on, and paredit
 ;; is evil. So switch it off again.
 (add-hook 'clojure-mode-hook 'turn-off-paredit)
+
+;; Use clojure mode for Pixie LISP too
+(setq auto-mode-alist (append auto-mode-alist
+                              '(("\\.pxi$" . clojure-mode))))
 ;; Mostly of use for the above languages
 (show-paren-mode)
-
-;; Prettty! Well, allegedly.
-;;(byte-compile-file "~/.xemacs/rainbow-delimiters.el")
-(require 'rainbow-delimiters)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
 
 (require 'erlang)
 (setq auto-mode-alist (append auto-mode-alist

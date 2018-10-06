@@ -3,11 +3,13 @@
 ;; Go Oracle
 ;;(load-file "~/golang/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 
+(setq exec-path (append exec-path '("/usr/local/go/bin")))
+
 (defun my-go-mode-hook ()
   (setq tab-width 4)
   (setq indent-tabs-mode nil)
-  ;; Use goimports instead of go-fmt
-  ;; (setq gofmt-command "goimports")
+  ;; Can use goimports instead of go-fmt
+  (setq gofmt-command "gofmt")
   ;; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
   ; Customize compile command to run go build
