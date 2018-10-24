@@ -61,8 +61,8 @@
 (add-hook 'haskell-mode-hook '(turn-on-haskell-indentation))
 
 ;; Tuareg mode is broken unless you turn SMIE indentation off
-(require 'tuareg)
-(setq tuareg-use-smie nil)
+;; (require 'tuareg)
+;; (setq tuareg-use-smie nil)
 
 ;; Save sessions
 (desktop-save-mode 1)
