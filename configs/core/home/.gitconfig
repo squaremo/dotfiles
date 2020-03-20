@@ -9,6 +9,8 @@
         amend = commit --amend
         pom = pull --ff-only origin master
         cached = diff --cached
+        cob = checkout -b
+        co = checkout
 [merge]
         conflictstyle = diff3
 [pull]
