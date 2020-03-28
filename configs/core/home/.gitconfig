@@ -6,12 +6,17 @@
 [alias]
 	fpush = push
         forcepush = push --force-with-lease
+        fpo = push --force-with-lease origin
         amend = commit --amend
         pom = pull --ff-only origin master
         cached = diff --cached
         cob = checkout -b
+        com = checkout master
         co = checkout
+        rbm = rebase -i --autosquash master
 [merge]
         conflictstyle = diff3
 [pull]
         ff = only
+[rebase]
+        autosquash = true
