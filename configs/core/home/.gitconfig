@@ -20,3 +20,5 @@
         ff = only
 [rebase]
         autosquash = true
+[init]
+	defaultBranch = main
